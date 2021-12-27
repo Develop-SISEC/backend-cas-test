@@ -1,0 +1,24 @@
+{
+  "name": "api-restCASV2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app_cas.js",
+  "scripts": {
+    "start": "nodemon src/app_cas.js",
+    "dev": "nodemon src/app_cas.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-fileupload": "^1.2.1",
+    "express-formidable": "^1.2.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "var_dump": "^1.0.5"
+  }
+}
