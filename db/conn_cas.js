@@ -9,9 +9,9 @@ var mysql = require('mysql');
 //local mysql db connection
 var connection = mysql.createConnection({
     host: '127.0.0.1',
-    user: 'siseccom_admin',
-    password: 'Sisec123.',
-    database: 'siseccom_sata'
+    user: 'devsisec_test1',
+    password: 'dbtest12022#..',
+    database: 'devsisec_db'
 });
 
 connection.connect(function(err) {
