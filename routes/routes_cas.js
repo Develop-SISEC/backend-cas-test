@@ -71,11 +71,11 @@ module.exports = function(app) {
     ///////////////////////////////////////
 
     app.route('/tecnico/tarea/:id')
-        .get(ctrl.getTareaTech)
+        .get(ctrl.getTareaTech) /// Trae todas las tareas asignadas
         .post();
 
     app.route('/tecnico/tareaAs/:id')
-        .get(ctrl.getTareaTech2)
+        .get(ctrl.getTareaTech2) ///devuelve todas las tareas asignadas como asistente
         .post();
 
     app.route('/servicio/tarea/mod')
@@ -85,6 +85,9 @@ module.exports = function(app) {
     app.route('/servicio/peticion/:id')
         .post(ctrl.actualizarPeticion) //actualizar el estado de la peticion
         .get(ctrl.getpeticionesinfo); //obtener la peticion completa selecionada del cliente
+
+    app.route('/servicio/detalles/:id')
+    .get(ctrl.getInfoService);    ///Devuelve la información de el servicio requerido
 
     app.route('/tecnico/tarea/avance/:id')
         .get(ctrl.getavance)

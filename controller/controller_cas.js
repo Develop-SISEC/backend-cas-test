@@ -568,5 +568,17 @@ exports.subsc = function(req, res) { //post
     });
 
 };
+//Fecha de Modificacion 05-01-2022
+exports.getInfoService = function(req, res){
+    var data = req.params;
+    Consul.getInfoServicio(data, function(err, task){
+if(err){
+    res.send(err);
+}else{
+res.json(task);
+}
+});
+
+};
 
 /////////////////// fin insertar usuario//////////

@@ -492,7 +492,7 @@ Consul.getarchivos = function(dats, result) {
     console.log("getarchivos: ", id);
 
 
-    sisec.query("SELECT * FROM siseccom_sata.uploads where id_Serv = ? and visible = 1;", id, function(err, res) {
+    sisec.query("SELECT * FROM uploads where id_Serv = ? and visible = 1;", id, function(err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -589,6 +589,21 @@ Consul.getTecnicosAsistente = function(id, result) { //ok
             result(null, res);
         }
     });
+};
+
+//Fecha de modificación  05-01-20229
+Consul.getInfoServicio = function(id, result){
+    console.log("Obteniendo Información de servicio", id.id);
+    //result(null, id.id)
+sisec.query("SELECT tarea.*,avance_tarea.*,client.* FROM tarea inner join avance_tarea, client where tarea.Id_Tarea = avance_tarea.Tarea_Id_Tarea and tarea.id_client = client.id_Client and tarea.Id_Tarea = ?",[id.id],function(err,res){
+    if(err){
+    console.log("Error al traer información de servicio", err);
+    result(null, err);
+    }else{
+        console.log("Información de servicio: ", res);
+        result(null, res);
+    }
+});
 };
 
 
