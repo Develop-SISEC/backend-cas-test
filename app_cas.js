@@ -41,7 +41,10 @@ app.use(function(req, res, next) {
 });
 
 var routes = require('./routes/routes_cas'); //importing route
+//app.use('/api/sisec',require('./routes/routes_sisec.js'));
+var routes2=require('./routes/routes_sisec.js');
 routes(app);
+routes2(app);
 
 /*
 var server = app.listen(port, function() {
